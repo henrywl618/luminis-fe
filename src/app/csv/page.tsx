@@ -15,7 +15,6 @@ const API_URL = process.env.ENCOUNTER_API_URL || "http://127.0.0.1:5000/encounte
 export default function Home() {
     const [file, setFile] = useState<File>();
     const [csvData, setCsvData] = useState<Encounter[]>();
-    const filereader = new FileReader();
 
     const handleOnChange: ChangeEventHandler = (
         e: ChangeEvent<HTMLInputElement>
@@ -25,7 +24,7 @@ export default function Home() {
 
     const handleOnSubmit: MouseEventHandler = (e) => {
         e.preventDefault();
-
+        const filereader = new FileReader();
         if (file) {
             filereader.onload = async (e) => {
                 const csvOutput = e.target?.result as string;
