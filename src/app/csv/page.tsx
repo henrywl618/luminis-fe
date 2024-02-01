@@ -10,7 +10,7 @@ import { CSVLink } from "react-csv";
 import Table from "./table";
 import { Encounter } from "./types";
 
-const API_URL = process.env.ENCOUNTER_API_URL || "http://127.0.0.1:5000/encounters";
+const API_URL = process.env.NEXT_PUBLIC_ENCOUNTER_API_URL || "http://127.0.0.1:5000/encounters";
 
 export default function Home() {
     const [file, setFile] = useState<File>();
